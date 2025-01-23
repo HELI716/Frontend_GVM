@@ -1,0 +1,50 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+/* Target all menu items in the sidebar */
+.p-sidebar .p-menuitem-link,
+.p-sidebar .p-menuitem-text,
+.p-sidebar .p-menuitem-icon,
+.p-menu .p-menuitem-link,
+.p-menu .p-menuitem-text,
+.p-menu .p-menuitem-icon,
+.p-menubar .p-menuitem-link,
+.p-menubar .p-menuitem-text,
+.p-menubar .p-menuitem-icon {
+    color: #000000 !important;
+}
+
+/* Target specifically the menu item text */
+.p-menuitem-text {
+    color: #000000 !important;
+}
+
+/* Target menu icons as well */
+.p-menuitem-icon {
+    color: #000000 !important;
+}
+
+/* Ensure active items also have black text */
+.active-menu-item .p-menuitem-text,
+.active-menu-item .p-menuitem-icon {
+    color: #000000 !important;
+}
+
+/* Add to existing styles */
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+/* Override PrimeNG sidebar styles */
+.p-sidebar {
+    transition: width 0.3s ease !important;
+}
+
+.p-sidebar-left {
+    top: 60px !important;
+    height: calc(100vh - 60px) !important;
+}

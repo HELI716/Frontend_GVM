@@ -1,0 +1,281 @@
+:host {
+    display: block;
+    height: 100vh;
+    background-color: #f5f5f5;
+}
+
+.layout-wrapper {
+    display: flex;
+    min-height: calc(100vh - 60px);
+}
+
+.navbar {
+    height: 60px;
+    background-color: #1e3f4e;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    color: white;
+}
+
+.navbar-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.logo {
+    height: 30px;
+}
+
+.sub-logo {
+    height: 25px;
+}
+
+.separator {
+    color: white;
+    font-size: 20px;
+}
+
+.user-name {
+    color: white;
+    font-size: 14px;
+}
+
+.sidebar {
+    width: 250px;
+    background-color: #1e3f4e;
+    height: calc(100vh - 60px);
+    transition: width 0.3s ease;
+    position: fixed;
+    left: 0;
+}
+
+.sidebar.collapsed {
+    width: 60px;
+}
+
+.menu-items {
+    padding: 1rem 0;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    color: white;
+}
+
+.menu-item:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.menu-item i {
+    font-size: 1.2rem;
+    min-width: 24px;
+}
+
+.menu-label {
+    margin-left: 0.5rem;
+    white-space: nowrap;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+.collapsed .menu-label {
+    opacity: 0;
+    width: 0;
+    overflow: hidden;
+}
+
+.sidebar-toggle {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+.main-content {
+    margin-left: 250px;
+    padding: 20px;
+    transition: margin-left 0.3s ease;
+}
+
+.main-content.sidebar-collapsed {
+    margin-left: 60px;
+}
+
+.active-menu-item {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.calendar-container {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+}
+
+.calendar-header {
+    margin-bottom: 20px;
+}
+
+.calendar-header h2 {
+    color: #333;
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+:host ::ng-deep .custom-calendar {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+:host ::ng-deep .custom-calendar .p-calendar {
+    width: 100%;
+}
+
+:host ::ng-deep .custom-calendar .p-datepicker {
+    width: 100%;
+    min-width: 320px;
+}
+
+:host ::ng-deep .custom-calendar .p-datepicker table {
+    margin: 0 auto;
+    width: 100%;
+}
+
+:host ::ng-deep .custom-calendar .p-datepicker td {
+    padding: 0.5rem;
+}
+
+:host ::ng-deep .custom-calendar .p-datepicker-header {
+    padding: 0.5rem;
+    background: #f8f9fa;
+    border-bottom: 1px solid #dee2e6;
+}
+
+:host ::ng-deep .custom-calendar .p-datepicker-calendar-container {
+    padding: 0.5rem;
+}
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    gap: 20px;
+    padding: 20px;
+}
+
+.calendar-section {
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.events-section {
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.events-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.events-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.event-card {
+    display: flex;
+    gap: 15px;
+    padding: 15px;
+    border-radius: 8px;
+    background: #f8f9fa;
+    transition: transform 0.2s;
+}
+
+.event-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.event-date {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 60px;
+    padding: 8px;
+    background: #2196f3;
+    border-radius: 6px;
+    color: white;
+}
+
+.event-date .day {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.event-date .month {
+    font-size: 0.9em;
+    text-transform: uppercase;
+}
+
+.event-details {
+    flex: 1;
+}
+
+.event-details h3 {
+    margin: 0 0 5px 0;
+    font-size: 1.1em;
+}
+
+.event-details p {
+    margin: 0 0 10px 0;
+    color: #666;
+    font-size: 0.9em;
+}
+
+.event-time {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: #666;
+    font-size: 0.9em;
+}
+
+.event-time i {
+    font-size: 0.9em;
+}
+
+:host ::ng-deep .custom-calendar {
+    width: 100%;
+}
+
+
+

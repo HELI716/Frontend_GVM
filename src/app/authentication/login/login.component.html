@@ -1,0 +1,27 @@
+<div class="parent">
+    <div class="login">
+        <label class="login-label" for="chk">Login</label>
+        <form>
+            <input type="email" name="emailAddress" [(ngModel)]="loginObj.emailAddress" placeholder="Email" required>
+            <input type="password" name="password" [(ngModel)]="loginObj.password" placeholder="Password" required>
+            <button (click)="onLogin()">Login</button>
+            <div class="col">
+                <a href="#!">Forgot password?</a>
+            </div>
+        </form>     
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,80 @@
+<!-- Navbar -->
+<div class="navbar">
+    <div class="navbar-left">
+        <img src="http://live.gavyamgentec.com/assets/images/digigai_white.png" alt="DigiGAI" class="logo">
+        <span class="separator">></span>
+        <img src="http://api.gavyamgentec.com/client_logos/1d816e26-d571-4b19-b8f9-093b71bd1a07/1717504341197.png" alt="GLS" class="sub-logo">
+    </div>
+    <div class="navbar-right">
+        <span class="user-name">SLS</span>
+        <span class="user-name">Heli Shah</span>
+    </div>
+</div>
+
+<!-- Sidebar and Content -->
+<div class="layout-wrapper">
+    <div class="sidebar" [class.collapsed]="!sidebarVisible">
+        <div class="sidebar-content">
+            <div class="menu-items">
+                <ng-container *ngFor="let item of menuItems">
+                    <div class="menu-item" [class.active-menu-item]="activeItem === item.label.toLowerCase()"
+                         (click)="handleMenuClick(item.label.toLowerCase())">
+                        <i [class]="item.icon"></i>
+                        <span class="menu-label" [class.hidden]="!sidebarVisible">{{item.label}}</span>
+                    </div>
+                </ng-container>
+            </div>
+            
+            <!-- Collapse Toggle Button -->
+            <div class="sidebar-toggle" (click)="toggleSidebar()">
+                <i class="pi" [ngClass]="sidebarVisible ? 'pi-angle-left' : 'pi-angle-right'"></i>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content" [class.sidebar-collapsed]="!sidebarVisible">
+        <div class="dashboard-grid">
+            <!-- Left Section - Calendar -->
+            <div class="calendar-section">
+                <div class="calendar-header">
+                    <h2>Calendar</h2>
+                </div>
+                <p-calendar 
+                    [(ngModel)]="date" 
+                    [inline]="true" 
+                    [showWeek]="true"
+                    [monthNavigator]="true"
+                    [yearNavigator]="true"
+                    yearRange="2000:2030"
+                    [showButtonBar]="true"
+                    styleClass="custom-calendar">
+                </p-calendar>
+            </div>
+
+            <!-- Right Section - Events -->
+            <div class="events-section">
+                <div class="events-header">
+                    <h2>Upcoming Events</h2>
+                    <button pButton icon="pi pi-plus" label="Add Event" class="p-button-sm"></button>
+                </div>
+                <div class="events-list">
+                    <div class="event-card" *ngFor="let event of upcomingEvents">
+                        <div class="event-date">
+                            <span class="day">{{event.date | date:'dd'}}</span>
+                            <span class="month">{{event.date | date:'MMM'}}</span>
+                        </div>
+                        <div class="event-details">
+                            <h3>{{event.title}}</h3>
+                            <p>{{event.description}}</p>
+                            <span class="event-time">
+                                <i class="pi pi-clock"></i> {{event.time}}
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <router-outlet></router-outlet>
+    </div>
+</div>
